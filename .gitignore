@@ -1,0 +1,4 @@
+/fhir-all-xsd/
+fhir.schema.json
+.idea
+*.iml
