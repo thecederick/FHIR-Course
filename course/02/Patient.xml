@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Patient xmlns="http://hl7.org/fhir">
-
+<Patient xmlns='http://hl7.org/fhir'>
+    <name>
+        <use value='official'/>
+        <family value='Pazii'/>
+        <given value='Yevhenii'/>
+        <given value='Me'/>
+    </name>
+    <name>
+        <use value='usual'/>
+        <given value='Eugene'/>
+    </name>
+    <birthDate value='1989-05-05'>
+        <extension url='http://hl7.org/fhir/StructureDefinition/patient-birthTime'>
+            <valueDateTime value='1989-05-05T08:10:00.000Z'/>
+        </extension>
+    </birthDate>
 </Patient>

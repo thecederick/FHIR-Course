@@ -1,3 +1,23 @@
 {
-  "resourceType": "Patient"
+  "resourceType": "Patient",
+  "name": [
+    {
+      "use": "official",
+      "given": ["Yevhenii", "Me"],
+      "family": "Pazii"
+    },
+    {
+      "use": "usual",
+      "given": ["Eugene"]
+    }
+  ],
+  "birthDate": "1989-05-05",
+  "_birthDate": {
+    "extension" : [
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/patient-birthTime",
+        "valueDateTime" : "1989-05-05T08:10:00.000Z"
+      }
+    ]
+  }
 }
