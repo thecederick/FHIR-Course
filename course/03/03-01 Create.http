@@ -1,0 +1,52 @@
+//Create Patient
+POST {{host}}/Patient
+Content-Type: application/fhir+xml
+Accept: application/fhir+json
+
+< ../02/Patient.xml
+###
+
+
+//Read Patient
+GET {{host}}/Patient/1057?_format=application/fhir+xml
+Accept: application/fhir+json
+
+###
+
+
+//Update Patient
+PUT {{host}}/Patient/2564034
+Content-Type: application/fhir+xml
+Accept: application/fhir+json
+
+<Patient xmlns='http://hl7.org/fhir'>
+    <id value="2564034"/>
+    <name>
+        <use value='official'/>
+        <family value='Pazii'/>
+        <given value='Yevhenii'/>
+    </name>
+    <name>
+        <use value='usual'/>
+        <given value='Eugene'/>
+    </name>
+    <birthDate value='1989-05-05'>
+        <extension url='http://hl7.org/fhir/StructureDefinition/patient-birthTime'>
+            <valueDateTime value='1989-05-05T08:10:00.000Z'/>
+        </extension>
+    </birthDate>
+    <telecom id="1">
+        <system value="phone"/>
+        <use value="mobile"/>
+        <value value="5555555"/>
+    </telecom>
+</Patient>
+
+###
+
+
+//Delete Patient
+DELETE {{host}}/Patient/1057
+Accept: application/fhir+json
+
+

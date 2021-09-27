@@ -2,3 +2,4 @@
 fhir.schema.json
 .idea
 *.iml
+/environment/http-client.private.env.json
