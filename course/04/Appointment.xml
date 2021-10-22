@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Appointment xmlns='http://hl7.org/fhir'>
+    <contained>
+        <Patient>
+            <id value="new-pat"/>
+            <name>
+                <family value="Smit"/>
+                <given value="Bob"/>
+            </name>
+        </Patient>
+    </contained>
+    <status value="proposed"/>
+    <participant>
+        <actor>
+            <reference value="/Practitioner/123"/>
+        </actor>
+        <required value="required"/>
+        <status value="needs-action"/>
+    </participant>
+    <participant>
+        <actor>
+            <reference value="#new-pat"/>
+            <type value="Patient"/>
+        </actor>
+        <required value="required"/>
+        <status value="accepted"/>
+    </participant>
+</Appointment>
