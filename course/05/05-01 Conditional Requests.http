@@ -1,0 +1,82 @@
+// Find a patient with identifier
+GET {{host}}/Patient?identifier=http://own.server.com/identifier|YP-1989-05-05-1
+Accept: application/fhir+json
+###
+
+
+//Create a new Patient
+POST {{host}}/Patient
+Content-Type: application/fhir+xml
+Accept: application/fhir+json
+
+< Patient.xml
+###
+
+
+//Conditional read with if none Match
+GET {{host}}/Patient/123454347
+Accept: application/fhir+json
+If-None-Match: W/"3"
+###
+
+
+//Conditional read with if none Match
+GET {{host}}/Patient/123454347
+Accept: application/fhir+json
+If-Modified-Since: Mon, 25 Oct 2021 12:22:21 GMT
+###
+
+
+//Create a new Patient only if there is no such Patient
+POST {{host}}/Patient
+Content-Type: application/fhir+xml
+Accept: application/fhir+json
+If-None-Exist: identifier=http://own.server.com/identifier|YP-1989-05-05-1
+
+< Patient.xml
+###
+
+
+// Update patient if match
+PUT {{host}}/Patient/123454347
+Content-Type: application/fhir+xml
+Accept: application/fhir+json
+If-Match: W/"1"
+
+<Patient xmlns='http://hl7.org/fhir'>
+    <id value="123454347"/>
+    <identifier>
+        <system value="http://own.server.com/identifier"/>
+        <value value="YP-1989-05-05-1"/>
+    </identifier>
+    <name>
+        <use value='official'/>
+        <family value='Pazii'/>
+        <given value='Yevhenii'/>
+    </name>
+</Patient>
+###
+
+
+// Update with conditional search
+PUT {{host}}/Patient?identifier=http://own.server.com/identifier|YP-1989-05-05-1
+Content-Type: application/fhir+xml
+Accept: application/fhir+json
+
+<Patient xmlns='http://hl7.org/fhir'>
+    <identifier>
+        <system value="http://own.server.com/identifier"/>
+        <value value="YP-1989-05-05-1"/>
+    </identifier>
+    <name>
+        <use value='official'/>
+        <family value='Pazii'/>
+        <given value='Yevhenii'/>
+    </name>
+</Patient>
+###
+
+//Conditional Delete
+DELETE {{host}}/Patient?identifier=http://own.server.com/identifier|YP-1989-05-05-1
+Accept: application/fhir+json
+###
