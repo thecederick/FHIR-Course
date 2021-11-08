@@ -1,0 +1,18 @@
+//Create with Request ID
+POST {{host}}/Patient
+Content-Type: application/fhir+xml
+Accept: application/fhir+json
+X-Request-Id: MyIdentifierOfTheRequest
+
+< Patient.xml
+###
+
+//Create with Correlation
+POST {{host}}/Patient
+Content-Type: application/fhir+xml
+Accept: application/fhir+json
+X-Correlation-Id: MyIdentifierOfTheRequest
+
+< Patient.xml
+###
+

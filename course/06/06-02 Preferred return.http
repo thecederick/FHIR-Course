@@ -1,0 +1,45 @@
+//Create without Prefer
+POST {{host}}/Patient
+Content-Type: application/fhir+xml
+Accept: application/fhir+json
+
+< Patient.xml
+###
+
+
+//Create with Prefer that returns resource
+POST {{host}}/Patient
+Content-Type: application/fhir+xml
+Accept: application/fhir+json
+Prefer: return=representation
+
+< Patient.xml
+###
+
+//Create with Prefer that returns empty body
+POST {{host}}/Patient
+Content-Type: application/fhir+xml
+Accept: application/fhir+json
+Prefer: return=minimal
+
+< Patient.xml
+###
+
+//Create with Prefer that returns OperationOutcome
+POST {{host}}/Patient
+Content-Type: application/fhir+xml
+Accept: application/fhir+json
+Prefer: return=OperationOutcome
+
+< Patient.xml
+###
+
+
+//Create with Prefer that trigers async processing
+POST {{host}}/Patient
+Content-Type: application/fhir+xml
+Accept: application/fhir+json
+Prefer: respond-async
+
+< Patient.xml
+###
