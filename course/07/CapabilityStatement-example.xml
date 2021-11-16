@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CapabilityStatement xmlns='http://hl7.org/fhir'>
+    <status value="draft"/>
+    <date value="2021"/>
+    <kind value="instance"/>
+    <fhirVersion value="4.0.1"/>
+    <format value="application/fhir+json"/>
+    <rest>
+        <mode value="server"/>
+        <resource>
+            <type value="Patient"/>
+            <profile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <versioning value="no-version"/>
+            <readHistory value="false" />
+            <updateCreate value="false" />
+            <conditionalCreate value="false"/>
+            <conditionalRead value="not-supported"/>
+            <conditionalUpdate value="false" />
+            <conditionalDelete value="not-supported" />
+        </resource>
+    </rest>
+</CapabilityStatement>

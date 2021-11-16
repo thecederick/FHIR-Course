@@ -1,0 +1,9 @@
+//Get Server's CapabilityStatement
+GET {{host}}/metadata
+Accept: application/fhir+json
+
+###
+
+//Get avaliable CapabilityStatements
+GET {{host}}/CapabilityStatement
+Accept: application/fhir+json
