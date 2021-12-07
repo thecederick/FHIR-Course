@@ -3,3 +3,29 @@ fhir.schema.json
 .idea
 *.iml
 /environment/http-client.private.env.json
+
+# Temporary folders #
+#####################
+package/temp
+package/template
+package/output
+package/fsh-generated
+
+# Don't commit this because it's so large #
+###########################################
+/**/org.hl7.fhir.publisher.jar
+/**/publisher.jar
+
+
+# Windows generated files #
+###########################
+Thumbs.db
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+
+# backup files #
+################
+*.bak
