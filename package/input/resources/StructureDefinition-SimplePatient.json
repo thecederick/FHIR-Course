@@ -1,0 +1,52 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "SimplePatient",
+  "url": "http://somewhere.org/fhir/uv/myig/StructureDefinition/SimplePatient",
+  "version": "1",
+  "name": "SimplePatient",
+  "title": "My First Simple Patient Profile",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient.name",
+        "path": "Patient.name",
+        "short": "This is short",
+        "definition": "This is definition",
+        "min": 1
+      },
+      {
+        "id": "Patient.name.family",
+        "path": "Patient.name.family",
+        "maxLength": 40
+      },
+      {
+        "id": "Patient.name.given",
+        "path": "Patient.name.given",
+        "maxLength": 45
+      },
+      {
+        "id": "Patient.telecom",
+        "path": "Patient.telecom",
+        "min": 1,
+        "max": "3"
+      },
+      {
+        "id": "Patient.birthDate",
+        "path": "Patient.birthDate",
+        "min": 1
+      },
+      {
+        "id": "Patient.photo",
+        "path": "Patient.photo",
+        "max": "0"
+      }
+    ]
+  }
+}
