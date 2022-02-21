@@ -24,7 +24,16 @@
       {
         "id": "Patient.name.family",
         "path": "Patient.name.family",
-        "maxLength": 40
+        "maxLength": 40,
+        "constraint": [
+          {
+            "key": "SP-1",
+            "severity": "error",
+            "human": "This is a description of the constraint that ensures that family length does not exceed 40 characters ",
+            "expression": "length() <= 40",
+            "source": "http://somewhere.org/fhir/uv/myig/StructureDefinition/SimplePatient"
+          }
+        ]
       },
       {
         "id": "Patient.name.given",
